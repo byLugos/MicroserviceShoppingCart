@@ -12,9 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class CartHandler {
-
     private final CartIn cartService;
-
     public boolean addArticleToCart(CartRequestDTO cartRequestDTO) {
         return cartService.addArticle(
                 cartRequestDTO.getIdCart(),
@@ -26,7 +24,6 @@ public class CartHandler {
     public Cart createCart(Cart cart) {
         return cartService.createCart(cart);
     }
-
     public boolean deleteArticleFromCart(CartRequestDTO cartRequestDTO) {
         return cartService.deleteArticle(
                 cartRequestDTO.getIdCart(),
@@ -34,7 +31,6 @@ public class CartHandler {
                 cartRequestDTO.getIdUser()
         );
     }
-
     public boolean purchaseCart(PurchaseRequestDTO purchaseRequestDTO) {
         return cartService.buy(
                 purchaseRequestDTO.getIdCart(),

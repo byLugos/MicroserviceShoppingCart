@@ -6,9 +6,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CartMapper {
-    public static CartResponseDTO toResponseDTO(Cart cart) {
+    public CartResponseDTO toResponseDTO(Cart cart) {
         if (cart == null) return null;
-
         return new CartResponseDTO(
                 cart.getId(),
                 cart.getIdUser(),

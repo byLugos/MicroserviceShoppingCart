@@ -12,5 +12,4 @@ import lombok.Setter;
 public class PurchaseRequestDTO {
     private Long idCart;
     private Long idUser;
-
 }

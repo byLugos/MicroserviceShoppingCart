@@ -32,7 +32,6 @@ public class CartService implements CartIn {
             if (!cartOut.articleExistsById(idArticle)) {
                 throw new InvalidArticleNotFound(Constants.ARTICLE_NOT_FOUND);
             }
-
             Map<String, Integer> articles = cart.getArticles();
             articles.put(idArticle.toString(), articles.getOrDefault(idArticle.toString(), 0) + quantity);
             cart.setArticles(articles);
@@ -43,7 +42,6 @@ public class CartService implements CartIn {
             throw new InvalidCartNotFound(Constants.CART_NOT_FOUND);
         }
     }
-
     @Override
     public boolean deleteArticle(Long idCart, Long idArticle, Long idUser) {
         Optional<Cart> cartOptional = cartOut.existsById(idCart);
@@ -67,7 +65,6 @@ public class CartService implements CartIn {
             throw new InvalidCartNotFound(Constants.CART_NOT_FOUND);
         }
     }
-
     @Override
     public boolean buy(Long idCart, Long userId) {
         Optional<Cart> cartOptional = cartOut.existsById(idCart);
